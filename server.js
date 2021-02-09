@@ -10,7 +10,8 @@ connectDB();
 app.use(express.json({ extended: false }));
 // app.use(express.static(path.join(__dirname, "client/build")));
 
-const PORT = process.env.PORT || 5000;
+app.use('/api/users', require('./routes/api/users'));
 
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => { console.log(`>>> Express Server started at port: ${PORT}`) });
